@@ -35,8 +35,6 @@ SCRIPTLIB=$(dirname $(readlink -f "$0"))/lib/
 test -d "$SCRIPTLIB"
 
 format='%-30s %-30s %-6s %-60s %s\n'
-printf "$format" "Name" "Version" "Arch" "Description" "Licenses"
-printf "$format" "----" "-------" "----" "-----------" "--------"
 
 COLUMNS=2000 dpkg -l | grep '^.[iufhwt]' | while read pState package pVer pArch pDesc; do
   license=
